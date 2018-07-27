@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>sc.fiji</groupId>
 		<artifactId>pom-indago</artifactId>
-		<version>2.2.9</version>
+		<version>2.2.10-SNAPSHOT</version>
 	</parent>
 
 	<properties>
@@ -50,6 +50,7 @@
 		<dependency>
 			<groupId>com.indago</groupId>
 			<artifactId>tr2d</artifactId>
+			<version>0.1.6-SNAPSHOT</version>
 		</dependency>
 
 		<!-- SEGMENTATION PLUGINS -->
@@ -64,6 +65,7 @@
 		<dependency>
 			<groupId>com.indago.tr2d</groupId>
 			<artifactId>Tr2dLabkitSegmentationPlugin</artifactId>
+			<version>0.1.5-SNAPSHOT</version>
 		</dependency>
 
 		<!-- OTHER DEPENDENCIES -->
@@ -139,4 +141,24 @@
 			<url>http://maven.imagej.net/content/groups/public</url>
 		</repository>
 	</repositories>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.6.0</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>java</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<mainClass>com.indago.tr2d.app.garcia.Tr2dApplication</mainClass>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
